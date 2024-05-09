@@ -124,3 +124,23 @@ const HayPacientesDePediatria = (pacientes: Pacientes[]): boolean => {
 console.log("El Pediatra puede ir a casa:", HayPacientesDePediatria(pacientes));
 
 // APARTADO 5 (reduce)
+
+interface NumeroPacientesPorEspecialidad {
+  medicoDeFamilia: number;
+  pediatria: number;
+  cardiologia: number;
+}
+
+const cuentaPacientesPorEspecialidad = (pacientes: Pacientes[]): NumeroPacientesPorEspecialidad => {
+  return pacientes.reduce(
+    (acumulador: NumeroPacientesPorEspecialidad, paciente: Pacientes) => {
+      if (paciente.especialidad === "Medico de familia") acumulador.medicoDeFamilia += 1;
+      if (paciente.especialidad === "Pediatra") acumulador.pediatria += 1;
+      if (paciente.especialidad === "Cardiólogo") acumulador.cardiologia += 1;
+      return acumulador;
+    },
+    { medicoDeFamilia: 0, pediatria: 0, cardiologia: 0 }
+  );
+};
+
+console.log("Pacientes por especialidad:", cuentaPacientesPorEspecialidad(pacientes));
