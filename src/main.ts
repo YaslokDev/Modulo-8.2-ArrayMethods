@@ -117,4 +117,10 @@ console.log("Pacientes reasignados:", reasignaPacientesAMedicoFamilia(pacientes)
 
 // APARTADO 4 (some)
 
+const HayPacientesDePediatria = (pacientes: Pacientes[]): boolean => {
+  return !pacientes.some((paciente: Pacientes) => paciente.especialidad === "Pediatra");
+};
+
+console.log("El Pediatra puede ir a casa:", HayPacientesDePediatria(pacientes));
+
 // APARTADO 5 (reduce)
