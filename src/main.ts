@@ -95,6 +95,12 @@ console.log(
 
 // APARTADO 2 (some)
 
+const activarProtocoloUrgencia = (pacientes: Pacientes[]): boolean => {
+  return pacientes.some((paciente: Pacientes) => paciente.frecuenciaCardiaca > 100 && paciente.temperatura > 39);
+};
+
+console.log("El protocolo de urgencia está activado:", activarProtocoloUrgencia(pacientes));
+
 // APARTADO 3 (map)
 
 // APARTADO 4 (some)
