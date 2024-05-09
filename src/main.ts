@@ -74,14 +74,29 @@ const pacientes: Pacientes[] = [
   },
 ];
 
-// APARTADO 1 A
+// APARTADO 1 A (filter)
 
-// APARTADO 1 B
+const obtenPacientesAsignadosAPediatria = (pacientes: Pacientes[]): Pacientes[] => {
+  return pacientes.filter((paciente: Pacientes) => paciente.especialidad === "Pediatra");
+};
 
-// APARTADO 2
+console.log("Pacientes asignados a Pediatría", obtenPacientesAsignadosAPediatria(pacientes));
 
-// APARTADO 3
+// APARTADO 1 B (filter)
 
-// APARTADO 4
+const obtenPacientesAsignadosAPediatriaYMenorDeDiezAnios = (pacientes: Pacientes[]): Pacientes[] => {
+  return pacientes.filter((paciente: Pacientes) => paciente.especialidad === "Pediatra" && paciente.edad < 10);
+};
 
-// APARTADO 5
+console.log(
+  "Pacientes asignados a Pediatría y menores de 10 años",
+  obtenPacientesAsignadosAPediatriaYMenorDeDiezAnios(pacientes)
+);
+
+// APARTADO 2 (some)
+
+// APARTADO 3 (map)
+
+// APARTADO 4 (some)
+
+// APARTADO 5 (reduce)
