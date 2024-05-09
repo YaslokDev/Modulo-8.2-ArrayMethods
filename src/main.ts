@@ -103,6 +103,18 @@ console.log("El protocolo de urgencia está activado:", activarProtocoloUrgencia
 
 // APARTADO 3 (map)
 
+const reasignaPacientesAMedicoFamilia = (pacientes: Pacientes[]): Pacientes[] => {
+  return pacientes.map((paciente: Pacientes) => {
+    if (paciente.especialidad === "Pediatra") {
+      return { ...paciente, especialidad: "Medico de familia" };
+    } else {
+      return paciente;
+    }
+  });
+};
+
+console.log("Pacientes reasignados:", reasignaPacientesAMedicoFamilia(pacientes));
+
 // APARTADO 4 (some)
 
 // APARTADO 5 (reduce)
